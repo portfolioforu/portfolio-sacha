@@ -295,7 +295,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, transparent 100%);
 }
 
 .portfolio-item .tag {
@@ -311,6 +311,13 @@ section {
   font-family: var(--font-display);
   color: #fff;
   font-size: 1.05rem;
+}
+
+.portfolio-item .desc {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin-top: 2px;
 }
 
 .item-1 { background: linear-gradient(150deg, #c17a5c, #6d3a26); }
