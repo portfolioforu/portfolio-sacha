@@ -285,6 +285,25 @@ section {
   overflow: hidden;
   display: flex;
   align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+}
+
+.portfolio-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.portfolio-item img.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .portfolio-item figcaption {
@@ -295,7 +314,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
 }
 
 .portfolio-item .tag {
@@ -314,18 +333,25 @@ section {
 }
 
 .portfolio-item .desc {
-  color: rgba(255,255,255,0.82);
+  color: rgba(255,255,255,0.88);
   font-size: 0.82rem;
   line-height: 1.4;
   margin-top: 2px;
 }
 
-.item-1 { background: linear-gradient(150deg, #c17a5c, #6d3a26); }
-.item-2 { background: linear-gradient(150deg, #8a8f7a, #3f4536); }
-.item-3 { background: linear-gradient(150deg, #b5573a, #2c2622); }
-.item-4 { background: linear-gradient(150deg, #d9c7ad, #8a5f43); }
-.item-5 { background: linear-gradient(150deg, #6d655a, #241f1a); }
-.item-6 { background: linear-gradient(150deg, #a86a4e, #5a3220); }
+.portfolio-item .meta {
+  color: rgba(255,255,255,0.62);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+
+.item-1::before { background: linear-gradient(150deg, rgba(193,122,92,0.38), rgba(109,58,38,0.5)); }
+.item-2::before { background: linear-gradient(150deg, rgba(138,143,122,0.38), rgba(63,69,54,0.5)); }
+.item-3::before { background: linear-gradient(150deg, rgba(181,87,58,0.38), rgba(44,38,34,0.55)); }
+.item-4::before { background: linear-gradient(150deg, rgba(217,199,173,0.3), rgba(138,95,67,0.45)); }
+.item-5::before { background: linear-gradient(150deg, rgba(109,101,90,0.38), rgba(36,31,26,0.55)); }
+.item-6::before { background: linear-gradient(150deg, rgba(168,106,78,0.38), rgba(90,50,32,0.5)); }
 
 /* ---------- Quote ---------- */
 .quote { text-align: center; padding-top: 40px; padding-bottom: 40px; }
