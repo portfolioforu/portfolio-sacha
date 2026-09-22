@@ -238,7 +238,42 @@ section {
   color: var(--ink-soft);
 }
 
+/* ---------- Univers — faits rapides ---------- */
+.facts-list {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.facts-list li {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  padding-left: 18px;
+  position: relative;
+}
+
+.facts-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.facts-list strong { color: var(--ink); }
+
 /* ---------- Prestations ---------- */
+.prestations-intro {
+  max-width: 60ch;
+  margin: 0 auto 8px;
+}
 .prestations { background: var(--bg-alt); max-width: none; }
 .prestations > * { max-width: var(--max-width); margin-left: auto; margin-right: auto; }
 
@@ -261,6 +296,63 @@ section {
   color: var(--accent-soft);
   font-size: 1.6rem;
 }
+
+.service-meta {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.service-meta li {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.service-meta strong { color: var(--ink); }
+
+/* ---------- Déroulé ---------- */
+.deroule-intro {
+  max-width: 60ch;
+  margin: 0 auto 8px;
+}
+
+.deroule-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.deroule-step {
+  position: relative;
+  padding-top: 8px;
+}
+
+.deroule-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: calc(100% - 6px);
+  width: calc(28px + 12px);
+  height: 1px;
+  background: var(--line);
+}
+
+.step-num {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.deroule-step h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.deroule-step p { font-size: 0.9rem; }
 
 /* ---------- Portfolio ---------- */
 .portfolio-note {
@@ -352,28 +444,60 @@ section {
 .item-4::before { background: linear-gradient(150deg, rgba(217,199,173,0.3), rgba(138,95,67,0.45)); }
 .item-5::before { background: linear-gradient(150deg, rgba(109,101,90,0.38), rgba(36,31,26,0.55)); }
 .item-6::before { background: linear-gradient(150deg, rgba(168,106,78,0.38), rgba(90,50,32,0.5)); }
+.item-7::before { background: linear-gradient(150deg, rgba(122,110,95,0.36), rgba(51,45,38,0.52)); }
+.item-8::before { background: linear-gradient(150deg, rgba(181,87,58,0.34), rgba(58,48,40,0.55)); }
+.item-9::before { background: linear-gradient(150deg, rgba(217,199,173,0.32), rgba(124,58,36,0.48)); }
 
 /* ---------- Quote ---------- */
-.quote { text-align: center; padding-top: 40px; padding-bottom: 40px; }
+.quote { text-align: center; padding-top: 100px; padding-bottom: 100px; }
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+  text-align: left;
+}
 
 .quote blockquote {
-  margin: 0 auto;
-  max-width: 720px;
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 26px;
+}
+
+.quote blockquote p {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: var(--ink);
-  line-height: 1.5;
+  line-height: 1.45;
+  margin: 0;
 }
 
 .quote cite {
   display: block;
-  margin-top: 20px;
+  margin-top: 18px;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--ink-soft);
 }
+
+/* ---------- FAQ ---------- */
+.faq { background: var(--bg-alt); max-width: none; }
+.faq > * { max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 48px;
+  margin-top: 48px;
+}
+
+.faq-item h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.faq-item p { font-size: 0.92rem; margin-bottom: 0; }
 
 /* ---------- Contact ---------- */
 .contact { background: var(--ink); max-width: none; }
@@ -461,7 +585,11 @@ section {
   .stat { min-width: 140px; }
 
   .services-grid { grid-template-columns: 1fr; }
+  .deroule-grid { grid-template-columns: 1fr; gap: 32px; }
+  .deroule-step:not(:last-child)::after { display: none; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .quote-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; gap: 28px; }
 
   section { padding: 64px 24px; }
 }
